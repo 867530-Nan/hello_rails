@@ -1,0 +1,23 @@
+<h1>All Blog Posts</h1>
+<hr />
+
+<%= link_to 'Create New Post', new_blog_post_path %>
+
+<% if @blog_posts.empty? %>
+<!-- could use @blog_posts.any? -->
+	<h3>No blog posts found, please create one!</h3>
+<% else %>
+	<ul>
+		<% @blog_posts.each do |blog_post| %>
+			<li> 
+				<%= link_to blog_post.title, blog_post_path(blog_post) %> 
+				<span> | </span>
+				<%= link_to 'Edit', edit_blog_post_path(blog_post) %>
+				<span> | </span>
+				<%= link_to 'Delete', blog_post_path(blog_post), method: :delete %>
+				<span> | </span>
+			</li>
+		<% end %>
+	</ul>
+<%end%>
+

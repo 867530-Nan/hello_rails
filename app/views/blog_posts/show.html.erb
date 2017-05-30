@@ -1,0 +1,19 @@
+<h1>
+	<%= @blog_post.title %>
+</h1>
+
+<blockquote>
+	<%= @blog_post.body %>	
+</blockquote>
+
+
+<i>
+	Authored by: 
+	<%= @blog_post.author %>
+</i>
+<br />
+<i>
+	 Posted at: <%= @blog_post.created_at%>
+</i>
+<br />
+<%= link_to 'Home Page', root_path %>
